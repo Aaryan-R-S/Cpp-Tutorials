@@ -1,0 +1,35 @@
+#include<iostream>
+#include<vector>
+#include<algorithm>
+using namespace std;
+
+bool myCompare(pair<int, int> p1, pair<int, int> p2){
+    return (p1.first<p2.first);
+}
+
+int main()
+{
+    int arr[] = {10,16,7,14,5,3,12,9};
+    // int arr[] = {4,7,2,6,1,0,5,3}    convert to this
+
+    vector<pair<int, int>> v;
+    for (int i = 0; i < sizeof(arr)/sizeof(int); i++)
+    {
+        v.push_back(make_pair(arr[i], i));
+    }
+    
+    sort(v.begin(), v.end(), myCompare);
+    
+    for (int i = 0; i < v.size(); i++)
+    {
+        arr[v[i].second] = i;
+    }
+    
+    for (auto &e : arr)
+    {
+        cout<<e<<" ";
+    }cout<<endl;
+    
+
+    return 0;
+}

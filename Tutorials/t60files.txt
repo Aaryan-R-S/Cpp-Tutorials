@@ -1,0 +1,6 @@
+Classes are : 
+1. fstreambase 
+2. ifstream --> derived from 1st class 
+3. ofstream --> derived from 1st class
+
+!!!Done!!!
